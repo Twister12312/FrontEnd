@@ -1,0 +1,12 @@
+div.container {
+  display: inline;
+}
+#navbar {
+  background-color: rgb(224, 223, 223);
+}
+body {
+  background: url(https://th.bing.com/th/id/OIP.eFcPrcMuXusps7mwBzwPawHaFZ?pid=ImgDet&w=2023&h=1476&rs=1);
+  background-size: 1300px 900px;
+  opacity: 2;
+  fill: 100%;
+}
