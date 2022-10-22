@@ -1,0 +1,18 @@
+hr.new5 {
+  border: 3px solid #ebaf40;
+  border-radius: 5px;
+}
+
+h2 {
+  border-radius: 1cm;
+  margin: 1cm;
+  color: aliceblue;
+  padding: 2%;
+}
+#log {
+  color: white;
+}
+div.bo {
+  height: 100%;
+  padding: 5%;
+}
