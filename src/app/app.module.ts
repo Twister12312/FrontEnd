@@ -1,41 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { AppService } from './myaadhar/myaadhar.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MyAadharComponent } from './myaadhar/myaadhar.component';
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { RouterModule, Routes } from '@angular/router';
-import { MyAadhar2Component } from './myaadhar2/myaadhar2.component';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'myaadhar', component: MyAadharComponent },
-  { path: 'myaadhar2', component: MyAadhar2Component },
-];
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyAadharComponent,
-    AdminComponent,
-    HomeComponent,
-    UserComponent,
-    MyAadhar2Component,
+    DashboardComponent,
+    DatepickerComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule
   ],
-  providers: [AppService],
-  bootstrap: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
