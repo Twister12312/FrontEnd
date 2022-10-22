@@ -1,0 +1,13 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "Name": "aaa",
+      "DOB": "2000-01-01",
+      "EmailId": "aaab@test.com",
+      "HomeAddress": "aaa,bbb street,ccc.",
+      "MobileNo": "9999999990",
+      "Gender": "Female"
+    }
+  ]
+}

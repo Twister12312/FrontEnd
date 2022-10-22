@@ -1,0 +1,34 @@
+<br>
+<div class="col-md-12">
+  <div class="text-center">
+    <button (click)="addEmp()" class="btn btn-warning"> Add Employee</button>
+  </div>
+    <br><br>
+  <h3 style="color:rgb(52, 164, 172)">Employees List</h3>
+  <br>
+  <div class="table-responsive table-container">
+    <table class="table" style="width: 1200px; margin-left: auto;margin-right: auto;">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email ID</th>
+          <th>Mobile No</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td class="hidden">{{emp.id}}</td>
+          <td>{{emp.Name}}</td>
+          <td>{{emp.EmailId}}</td>
+          <td>{{emp.MobileNo}}</td>
+          <td>{{emp.Gender}}</td>
+          <td>
+            <button (click)="detailEmp(emp)" class="btn btn-info"> View Detail</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
