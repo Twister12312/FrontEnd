@@ -6,5 +6,5 @@ export interface myaadhar {
   dob: string;
   phone: number;
   email: string;
-  employeeid: string;
+  designation: string;
 }
