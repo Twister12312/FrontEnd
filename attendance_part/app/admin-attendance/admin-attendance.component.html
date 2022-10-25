@@ -1,0 +1,132 @@
+<div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Employee Payroll Management </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addEmployee" type="submit">Add Attendance</button>
+            <button class="btn btn-secondary" routerLink="#" style="margin-left:5px;">Back</button>
+
+          </div>
+        </div>
+    </nav>
+
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          
+          <th scope="col">Employee ID</th>
+
+          <th scope="col">Date</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendance of atnList">
+          
+          <td>{{attendance.employeeid}}</td>
+
+          <td>{{attendance.date}}</td>
+          <td>{{attendance.status}}</td>
+          <!-- <tr>
+            <td>1</td>
+            <td>22/02199</td>
+            <td>present</td> -->
+          
+       
+          <!-- <td>{{attendance.Action}}</td> -->
+          <td>
+                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editAttendance" (click)="editAttendance(attendance)">Edit</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" (click)="deleteAttendance(attendance)" >Delete</button>
+                <!-- <button  class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-target="#editAttendance" >Edit</button>               -->
+                 <!--  <button type="button" class="btn btn-outline-danger" (click)="deleteAttendance(attendance)">Delete</button> -->
+
+            </td>
+  
+        </tr>
+  
+      </tbody>
+    </table>
+
+
+
+
+  
+  <!-- Add employee modal -->
+  <div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new Attendance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form [formGroup]="atdDetail">
+            
+                <div class="sm-3">
+                    <label for="exampleInputEmail1" class="form-label">Employeeid</label>
+                    <input type="text" formControlName="employeeid" class="form-control" id="employeeid"
+                      aria-describedby="emailHelp">
+                  </div>
+                  <div class="sm-3">
+                    <label for="exampleInputEmail1" class="form-label">Date</label>
+                    <input type="text" formControlName="date" class="form-control" id="date" aria-describedby="emailHelp">
+                  </div>
+                  <div class="sm-3">
+                    <label for="exampleInputEmail1" class="form-label">Status</label>
+                    <input type="text" formControlName="status" class="form-control" id="status" aria-describedby="emailHelp">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addAttendance(1)">Add employee</button>
+                  </div>            
+                  </form>
+        
+      </div>
+    </div>
+</div>
+  </div>
+
+    <!-- edit employee modal -->
+  
+    <div class="modal fade" id="editAttendance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Attendance</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="atdDetail">
+            
+              <div class="sm-3">
+                  <label for="exampleInputEmail1" class="form-label">Employeeid</label>
+                  <input type="text" formControlName="employeeid" class="form-control" id="employeeid"
+                    aria-describedby="emailHelp">
+                </div>
+                <div class="sm-3">
+                  <label for="exampleInputEmail1" class="form-label">Date</label>
+                  <input type="text" formControlName="date" class="form-control" id="date" aria-describedby="emailHelp">
+                </div>
+                <div class="sm-3">
+                  <label for="exampleInputEmail1" class="form-label">Status</label>
+                  <input type="text" formControlName="status" class="form-control" id="status" aria-describedby="emailHelp">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" (click)="updateAttendance()">update</button>
+                </div>            
+                </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+ 
